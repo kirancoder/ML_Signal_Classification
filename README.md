@@ -63,4 +63,42 @@ These are derived from **Empirical Mode Decomposition (EMD)** and **Hilbert Tran
 | `mean_inst_freq` | Average instantaneous frequency across IMFs. Captures dynamic frequency behavior. |
 | `mean_inst_amp` | Average amplitude envelope across IMFs. Reflects signal strength over time. |
 
+# 🐱 CatBoost Classifier
+
+[CatBoost](https://www.geeksforgeeks.org/machine-learning/catboost-algorithms/) (short for **Categorical Boosting**) is a high-performance, open-source gradient boosting library developed by **Yandex**. It is designed to handle **categorical features** natively and is particularly effective for structured datasets in both classification and regression tasks.
+
+---
+
+## 🔑 Key Features
+
+- **Gradient Boosting**: Builds an ensemble of decision trees sequentially, each correcting the errors of the previous ones.
+- **Ordered Boosting**: Avoids target leakage when handling categorical features by permuting them in a way that preserves their natural order.
+- **Automatic Handling of Categorical Features**: No need for manual encoding like one-hot or label encoding.
+- **Regularization**: Uses L2 regularization to prevent overfitting and improve generalization.
+- **Robust to Overfitting**: Performs well out-of-the-box thanks to its boosting and regularization strategies.
+
+---
+
+## ⚙️ Common Parameters
+
+| Parameter       | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `iterations`   | Number of boosting rounds (trees).                                          |
+| `learning_rate`| Step size for updating predictions. Lower values improve generalization.   |
+| `depth`        | Depth of each decision tree. Controls model complexity.                    |
+| `loss_function`| Defines the optimization objective (e.g., `'Logloss'`, `'MultiClass'`).     |
+| `eval_metric`  | Metric used for evaluation (e.g., `'Accuracy'`, `'F1'`).                    |
+| `random_seed`  | Ensures reproducibility.                                                    |
+| `cat_features` | List of categorical feature indices or names.                              |
+
+---
+
+## 🧪 Example Workflow
+
+### 1. Install CatBoost
+```bash
+pip install catboost
+
+
+
 
